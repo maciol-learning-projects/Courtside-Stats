@@ -1,27 +1,25 @@
-Courtside Stats
-
-
-
-
-
-
+# Courtside Stats
 
 
 Project Concept
 
 Courtside Stats is a web application combining modern backend architecture, real-time updates, and interactive data visualization to provide an NBA analytics and live dashboard experience.
 
+---
+
 Users can:
 
-View Player & Team Stats: Browse historical NBA data including points, rebounds, assists, and more, with advanced filtering options.
+- View Player & Team Stats: Browse historical NBA data including points, rebounds, assists, and more, with advanced filtering options.
 
-Create a Live Game Dashboard: Simulate live games where scores and key events (e.g., "LeBron James makes a 3-pointer") update in real-time for all viewers.
+- Create a Live Game Dashboard: Simulate live games where scores and key events (e.g., "LeBron James makes a 3-pointer") update in real-time for all viewers.
 
-Visualize Data: Explore player and team stats through interactive charts, including shot charts, season trends, and performance comparisons.
+- Visualize Data: Explore player and team stats through interactive charts, including shot charts, season trends, and performance comparisons.
 
 This project mimics the type of data-intensive, real-time dashboards used in sports analytics and business intelligence.
 
-Tech Stack
+---
+
+## Tech Stack
 Layer	Technology
 Frontend	React, TypeScript, Vite, Zustand
 Backend	Node.js, Express, Socket.IO
@@ -29,7 +27,10 @@ Database	MongoDB
 Real-Time	Socket.IO
 Visualization	Chart.js / Recharts
 DevOps	Docker, docker-compose
-Folder Structure
+
+---
+
+## Folder Structure
 ```bash
 Courtside-Stats
 ├─ backend/                 # Backend service
@@ -80,7 +81,9 @@ src/ folders contain all application logic.
 
 Dockerfiles handle containerized builds for frontend and backend.
 
-Getting Started
+---
+
+## Getting Started
 Run All Services with Docker
 ```bash
 docker-compose up --build
@@ -109,25 +112,30 @@ cd frontend
 npm install
 npm run dev
 ```
-Features & Roadmap
 
- Backend skeleton with Express + MongoDB + Socket.IO
+---
 
- Frontend skeleton with React + TypeScript + Zustand + Vite
+## Features & Roadmap
 
- Dockerized full-stack setup
+[x] Backend skeleton with Express + MongoDB + Socket.IO
 
- Connect frontend & backend with real-time events
+[x] Frontend skeleton with React + TypeScript + Zustand + Vite
 
- Implement interactive charts and data visualization
+[x] Dockerized full-stack setup
 
- Build live game dashboard with real-time score updates
+[ ] Connect frontend & backend with real-time events
 
- Add authentication and user management
+[ ] Implement interactive charts and data visualization
 
- Implement advanced filtering for historical stats
+[ ] Build live game dashboard with real-time score updates
 
- Deploy to production
+[ ] Add authentication and user management
+
+[ ] Implement advanced filtering for historical stats
+
+[ ] Deploy to production
+
+---
 
 Contributing
 
