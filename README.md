@@ -1,0 +1,134 @@
+Courtside Stats
+
+
+
+
+
+
+
+
+Project Concept
+
+Courtside Stats is a web application combining modern backend architecture, real-time updates, and interactive data visualization to provide an NBA analytics and live dashboard experience.
+
+Users can:
+
+View Player & Team Stats: Browse historical NBA data including points, rebounds, assists, and more, with advanced filtering options.
+
+Create a Live Game Dashboard: Simulate live games where scores and key events (e.g., "LeBron James makes a 3-pointer") update in real-time for all viewers.
+
+Visualize Data: Explore player and team stats through interactive charts, including shot charts, season trends, and performance comparisons.
+
+This project mimics the type of data-intensive, real-time dashboards used in sports analytics and business intelligence.
+
+Tech Stack
+Layer	Technology
+Frontend	React, TypeScript, Vite, Zustand
+Backend	Node.js, Express, Socket.IO
+Database	MongoDB
+Real-Time	Socket.IO
+Visualization	Chart.js / Recharts
+DevOps	Docker, docker-compose
+Folder Structure
+```bash
+Courtside-Stats
+├─ backend/                 # Backend service
+│  ├─ src/                  # Source code
+│  │  ├─ config/            # Configuration (DB, env, etc.)
+│  │  ├─ controllers/       # Route handlers / business logic
+│  │  ├─ models/            # Database models (MongoDB schemas)
+│  │  ├─ routes/            # API routes
+│  │  ├─ sockets/           # Socket.IO event handlers
+│  │  ├─ utils/             # Helper functions
+│  │  └─ server.ts          # Entry point for the backend
+│  ├─ .env                  # Environment variables (ignored in Git)
+│  ├─ Dockerfile            # Dockerfile for backend
+│  ├─ package.json
+│  ├─ package-lock.json
+│  └─ tsconfig.json
+├─ frontend/                # Frontend service
+│  ├─ src/                  # Source code
+│  │  ├─ assets/            # Images, icons, logos
+│  │  ├─ components/        # Reusable React components
+│  │  ├─ pages/             # Page-level components
+│  │  ├─ store/             # Zustand state management
+│  │  ├─ utils/             # Helper functions, API calls
+│  │  ├─ App.tsx            # Root app component
+│  │  ├─ main.tsx           # Frontend entry point
+│  │  ├─ App.css
+│  │  └─ index.css
+│  ├─ public/               # Static assets
+│  ├─ Dockerfile            # Dockerfile for frontend
+│  ├─ index.html
+│  ├─ package.json
+│  ├─ package-lock.json
+│  ├─ tsconfig.json
+│  ├─ tsconfig.app.json
+│  ├─ tsconfig.node.json
+│  ├─ vite.config.ts
+│  └─ eslint.config.js
+├─ docker-compose.yml       # Docker Compose for full-stack setup
+└─ README.md                # Project documentation
+```
+
+
+Notes:
+
+.env files, node_modules, and build artifacts are ignored via .gitignore.
+
+src/ folders contain all application logic.
+
+Dockerfiles handle containerized builds for frontend and backend.
+
+Getting Started
+Run All Services with Docker
+```bash
+docker-compose up --build
+```
+
+This starts frontend, backend, and MongoDB together:
+
+Backend API → http://localhost:5000
+
+Frontend → http://localhost:5173
+
+MongoDB → mongodb://localhost:27017
+
+Run Locally Without Docker
+
+Backend
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Features & Roadmap
+
+ Backend skeleton with Express + MongoDB + Socket.IO
+
+ Frontend skeleton with React + TypeScript + Zustand + Vite
+
+ Dockerized full-stack setup
+
+ Connect frontend & backend with real-time events
+
+ Implement interactive charts and data visualization
+
+ Build live game dashboard with real-time score updates
+
+ Add authentication and user management
+
+ Implement advanced filtering for historical stats
+
+ Deploy to production
+
+Contributing
+
+Contributions are welcome! Fork the repo, submit PRs, and follow clear commit messages and coding standards.
