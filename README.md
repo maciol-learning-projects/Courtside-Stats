@@ -117,23 +117,23 @@ npm run dev
 
 ## Features & Roadmap
 
-[x] Backend skeleton with Express + MongoDB + Socket.IO
+- [x] Backend skeleton with Express + MongoDB + Socket.IO
 
-[x] Frontend skeleton with React + TypeScript + Zustand + Vite
+- [x] Frontend skeleton with React + TypeScript + Zustand + Vite
 
-[x] Dockerized full-stack setup
+- [x] Dockerized full-stack setup
 
-[ ] Connect frontend & backend with real-time events
+- [ ] Connect frontend & backend with real-time events
 
-[ ] Implement interactive charts and data visualization
+- [ ] Implement interactive charts and data visualization
 
-[ ] Build live game dashboard with real-time score updates
+- [ ] Build live game dashboard with real-time score updates
 
-[ ] Add authentication and user management
+- [ ] Add authentication and user management
 
-[ ] Implement advanced filtering for historical stats
+- [ ] Implement advanced filtering for historical stats
 
-[ ] Deploy to production
+- [ ] Deploy to production
 
 ---
 
