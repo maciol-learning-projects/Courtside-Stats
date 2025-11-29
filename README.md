@@ -19,14 +19,30 @@ This project mimics the type of data-intensive, real-time dashboards used in spo
 
 ---
 
-## Tech Stack
-Layer	Technology
-Frontend	React, TypeScript, Vite, Zustand
-Backend	Node.js, Express, Socket.IO
-Database	MongoDB
-Real-Time	Socket.IO
-Visualization	Chart.js / Recharts
-DevOps	Docker, docker-compose
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 18** with TypeScript
+- **Vite** for fast development builds
+- **Zustand** for state management
+- **Axios** for API communication
+- **Tailwind CSS** for styling
+- **Socket.IO Client** for real-time updates
+
+### Backend
+- **Node.js** with Express.js
+- **TypeScript** for type safety
+- **MongoDB** with Mongoose ODM
+- **Socket.IO** for real-time communication
+- **JWT** for authentication (ready for implementation)
+- **CORS** with secure configuration
+
+### DevOps & Infrastructure
+- **Docker** & Docker Compose for containerization
+- **MongoDB** with data persistence
+- **Environment-based configuration**
+- **Professional middleware architecture**
+
 
 ---
 
@@ -37,8 +53,10 @@ Courtside-Stats
 │  ├─ src/                  # Source code
 │  │  ├─ config/            # Configuration (DB, env, etc.)
 │  │  ├─ controllers/       # Route handlers / business logic
+│  │  ├─ middleware/        # Communication between front- and backend
 │  │  ├─ models/            # Database models (MongoDB schemas)
 │  │  ├─ routes/            # API routes
+│  │  ├─ scripts/           # For seeding, testing etc.
 │  │  ├─ sockets/           # Socket.IO event handlers
 │  │  ├─ utils/             # Helper functions
 │  │  └─ server.ts          # Entry point for the backend
@@ -123,7 +141,7 @@ npm run dev
 
 - [x] Dockerized full-stack setup
 
-- [ ] Connect frontend & backend with real-time events
+- [x] Connect frontend & backend with real-time events
 
 - [ ] Implement interactive charts and data visualization
 

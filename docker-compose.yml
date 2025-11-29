@@ -2,7 +2,9 @@ services:
   backend:
     build: ./backend
     ports:
-      - "5000:5000"
+      - "5001:5000"
+    environment:
+      - DOCKER_ENV=true  # This tells the app it's running in Docker
     env_file:
       - ./backend/.env
     depends_on:
@@ -17,7 +19,6 @@ services:
 
   mongo:
     image: mongo
-    restart: always
     ports:
       - "27017:27017"
     volumes:

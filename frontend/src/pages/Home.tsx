@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { testBackend } from "../utils/api";
+
 
 const Home: React.FC = () => {
   useEffect(() => {
-    testBackend();
+    console.log("Home component mounted");
   }, []);
 
   return (
