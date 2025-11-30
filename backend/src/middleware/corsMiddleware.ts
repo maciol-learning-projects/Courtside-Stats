@@ -20,9 +20,14 @@ export const corsMiddleware = (req: Request, res: Response, next: NextFunction):
   const origin = req.headers.origin as string;
   
   console.log(`🌐 CORS Request - Origin: ${origin}, Method: ${req.method}`);
+   // ALLOW REQUESTS WITH NO ORIGIN (curl, postman, etc.)
+  if (!origin) {
+    res.header('Access-Control-Allow-Origin', '*'); // Allow any origin for no-origin requests
+    console.log(`✅ CORS Allowed for no-origin request`);
+  }
   
   // Allow requests from any allowed origin
-  if (allowedOrigins.includes(origin)) {
+  else if (allowedOrigins.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     console.log(`✅ CORS Allowed for: ${origin}`);
   }

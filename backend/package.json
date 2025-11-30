@@ -8,13 +8,18 @@
     "dev": "nodemon --exec ts-node src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "seed": "ts-node src/scripts/seedData.ts"
+    "seed": "ts-node src/scripts/seedData.ts",
+    "seed:players": "ts-node src/scripts/seedPlayers.ts",           
+    "seed:players:refresh": "ts-node src/scripts/seedPlayers.ts --refresh", 
+    "seed:players:dev": "USE_REAL_API=false ts-node src/scripts/seedPlayers.ts", 
+    "check:cache": "ts-node src/scripts/checkCache.ts"              
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "axios": "^1.13.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",

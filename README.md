@@ -36,6 +36,14 @@ This project mimics the type of data-intensive, real-time dashboards used in spo
 - **Socket.IO** for real-time communication
 - **JWT** for authentication (ready for implementation)
 - **CORS** with secure configuration
+- **Axios**  for external API communication
+- **SportsData.io** NBA API for real player data
+
+### Data Architecture
+- Smart Caching System with TTL (Time-To-Live)
+- Hybrid Data Sources (Real API + Development mock data)
+- Data Transformation Layer for API consistency
+- Automatic Cache Refresh based on data freshness
 
 ### DevOps & Infrastructure
 - **Docker** & Docker Compose for containerization
@@ -131,6 +139,29 @@ npm install
 npm run dev
 ```
 
+Seeding Commands
+```bash
+# Development mode (fast, uses mock data)
+npm run seed:players:dev
+
+# Smart cache mode (uses API only if cache is stale)
+npm run seed:players
+
+# Force API refresh (updates cache from SportsData.io)
+npm run seed:players:refresh
+
+# Test API connectivity
+npm run test:api
+```
+---
+
+```bash
+Frontend Request → Backend API → Check Cache Freshness
+                                → If Fresh: Return Cached Data
+                                → If Stale: SportsData.io API → Update Cache → Return Data
+                                → If Error: Fallback to Development Data
+```
+
 ---
 
 ## Features & Roadmap
@@ -143,7 +174,13 @@ npm run dev
 
 - [x] Connect frontend & backend with real-time events
 
-- [ ] Implement interactive charts and data visualization
+- [x] Smart NBA API integration with caching
+
+- [x] Data transformation layer for consistent interfaces
+
+- [x] Hybrid development/production data modes
+
+- [x] Implement interactive charts and data visualization
 
 - [ ] Build live game dashboard with real-time score updates
 

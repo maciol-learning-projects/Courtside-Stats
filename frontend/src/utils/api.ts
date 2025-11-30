@@ -67,6 +67,37 @@ const apiRequest = async <T = any>(
   }
 };
 
+// NBA Data API services
+export const nbaAPI = {
+  // Visualizations
+  getPlayerVisualization: (playerId: string, params?: any) =>
+    apiClient.get(`/visualizations/player/${playerId}`, { params }).then(res => res.data),
+
+  comparePlayers: (playerIds: string[], season?: number) =>
+    apiClient.get('/visualizations/players/comparison', { 
+      params: { playerIds: playerIds.join(','), season } 
+    }).then(res => res.data),
+
+  getTeams: () =>
+    apiClient.get('/visualizations/teams').then(res => res.data),
+
+  // Players
+  getPlayers: (params?: { page?: number; perPage?: number; search?: string }) =>
+    apiClient.get('/players', { params }).then(res => res.data),
+  getPlayer: (id: number) =>
+    apiClient.get(`/players/${id}`).then(res => res.data),
+};
+
+// Error handling
+apiClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    const message = error.response?.data?.message || 'Network error occurred';
+    console.error('API Error:', message);
+    throw new Error(message);
+  }
+);
+
 /**
  * @desc    Player-related API calls
  */

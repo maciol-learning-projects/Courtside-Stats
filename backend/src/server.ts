@@ -23,6 +23,7 @@ import {
 import playerRoutes from './routes/playerRoutes';
 import teamRoutes from './routes/teamRoutes';
 import gameRoutes from './routes/gameRoutes';
+import visualizationRoutes from './routes/visualizationRoutes';
 
 // Import environment variables
 import dotenv from 'dotenv';
@@ -92,6 +93,11 @@ app.use('/api/teams', teamRoutes);
  */
 app.use('/api/games', gameRoutes);
 
+/**
+ * @route   /api/visualizations
+ * @desc    All data visualization endpoints
+ */
+app.use('/api/visualizations', visualizationRoutes); 
 // Health Check Endpoint
 
 /**
